@@ -67,7 +67,22 @@
 
             document.getElementById("output").innerText = result;
         }
-    </script>
+
+        function copyText() {
+            let outputDiv = document.getElementById("output");
+            let textToCopy = outputDiv.innerText || outputDiv.textContent;
+
+        if (textToCopy) {
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert("Teks berhasil disalin!");
+            }).catch(err => {
+                console.error("Gagal menyalin teks: ", err);
+            });
+        } else {
+            alert("Tidak ada teks untuk disalin!");
+        }
+    }
+</script>
 
 </body>
 </html>
