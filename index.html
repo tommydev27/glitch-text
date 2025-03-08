@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glitch Text Generator</title>
+    <title>Tommy Website</title>
 </head>
 <style>
     body {
@@ -24,9 +24,55 @@
             background: white;
             border-radius: 10px;
         }
+        
+/* Layar loading */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin-top: 150px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 0.95s forwards 0.95s; /* Hilang setelah 0.95 detik */
+}
+
+/* Animasi menghilangkan loading */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.loader {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 5px solid rgb(175,220,227);
+    border-top: 5px solid #fff;
+    animation: spin 0.55s linear infinite;
+}
+
+/* Animasi putaran */
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+   .fixed {
+    position: fixed;
+    top:0; left:0;
+    width: 100%; 
+    z-index:99; }
    </style>
    
 <body>
+        <div id="loading-screen">
+          <div class="loader"></div>
+            </div>
    <div class="container">
     <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 10px;">
         
