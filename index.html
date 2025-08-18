@@ -21,208 +21,208 @@
         .container {
             margin: 0 auto;
             padding: 0px;
-            color: #0fe807;
+            color: #fff;
             overflow: hidden;
             background: #222;
             border-radius: 10px;
         }
         
-/* Layar loading */
-#loading-screen {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    margin-top: 150px;
-    background: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    animation: fadeOut 0.95s forwards 0.95s; /* Hilang setelah 0.95 detik */
-}
-
-/* Animasi menghilangkan loading */
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-.loader {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 5px solid rgb(175,220,227);
-    border-top: 5px solid #fff;
-    animation: spin 0.55s linear infinite;
-}
-
-/* Animasi putaran */
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-   .fixed {
-    position: fixed;
-    top:0; left:0;
-    width: 100%; 
-    z-index:99; }
-    
-    
-   header{padding:5px 0px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center; font-family:Normal; margin-bottom: 10px;}
-    header h1{font-size:16px;margin:0;font-weight:700; color:#fff; }
-    header .badge{font-size:11px;color:#02c302; background:#0a0a0a;border:1px solid #123a18;padding:2px 6px;border-radius:999px}
-   </style>
-   
-<body>
-
-   <div class="container">
-    <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 10px;">
-      <header>
-    <h1>Glitch Teks</h1>
-    <span class="badge">font • icon • unicode character</span>
-      </header>
-        <textarea id="inputText" placeholder="Tulis..." style="width: 320px; height: 120px; padding: 10px; margin-bottom: 15px; font-size: 13px; border: 1px solid #777; border-radius: 10px; resize: none; background: #222; color: #fff;"></textarea>
-
-<div style="display: flex; gap: 18.9px; flex-wrap: wrap; align-items: flex-start;">
-    <div style="display: flex; flex-direction: column;">
-        <label for="glitchStyle" style="font-size: 12px;"><b>Pilih Jenis Glitch:</b></label>
+        /* Layar loading */
+        #loading-screen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            margin-top: 150px;
+            background: #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: fadeOut 0.95s forwards 0.95s; /* Hilang setelah 0.95 detik */
+        }
         
-        <select id="glitchStyle" style="padding: 3px; border: 1px solid #777; border-radius: 5px; background: #333; color: #fff;">
-            <option value="style1">Glitch 1</option>
-            <option value="style2">Glitch 2</option>
-            <option value="style3">Glitch 1&2</option>
-        </select>
-    </div>
+        /* Animasi menghilangkan loading */
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        
+        .loader {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 5px solid rgb(175,220,227);
+            border-top: 5px solid #fff;
+            animation: spin 0.55s linear infinite;
+        }
+        
+        /* Animasi putaran */
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+           .fixed {
+            position: fixed;
+            top:0; left:0;
+            width: 100%; 
+            z-index:99; }
+            
+            
+           header{padding:5px 0px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center; font-family:Normal; margin-bottom: 10px;}
+            header h1{font-size:16px;margin:0;font-weight:700; color:#fff; }
+            header .badge{font-size:11px;color:#02c302; background:#0a0a0a;border:1px solid #123a18;padding:2px 6px;border-radius:999px}
+           </style>
+           
+        <body>
 
-    <div style="display: flex; flex-direction: column;">
-        <label for="glitchIntensity" style="font-weight: bold; font-size: 12px;">Intensitas Glitch:</label>
-        <input type="number" id="glitchIntensity" value="1" min="1" max="10" 
-            style="width: 92px; padding: 5px; border: 1px solid #777; border-radius: 5px; background: #333; color: #fff;">
-    </div>
+     <div class="container">
+      <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 10px;">
+        <header>
+      <h1>Glitch Teks</h1>
+      <span class="badge">font • icon • unicode character</span>
+        </header>
+          <textarea id="inputText" placeholder="Tulis..." style="width: 320px; height: 120px; padding: 10px; margin-bottom: 15px; font-size: 13px; border: 1px solid #777; border-radius: 10px; resize: none; background: #222; color: #fff;"></textarea>
 
-    <div style="display: flex; flex-direction: column;">
-        <label for="duplicateCount" style="font-weight: bold; font-size: 12px;">Jumlah Text</label>
-        <input type="number" id="duplicateCount" value="1" min="1" max="10" 
-            style="width: 92px; padding: 5px; border: 1px solid #777; border-radius: 5px; background: #333; color: #fff;">
-        </div>
+      <div style="display: flex; gap: 18.9px; flex-wrap: wrap; align-items: flex-start;">
+          <div style="display: flex; flex-direction: column;">
+              <label for="glitchStyle" style="font-size: 12px;"><b>Pilih Jenis Glitch:</b></label>
+              
+              <select id="glitchStyle" style="padding: 3px; border: 1px solid #777; border-radius: 5px; background: #333; color: #fff;">
+                  <option value="style1">Glitch 1</option>
+                  <option value="style2">Glitch 2</option>
+                  <option value="style3">Glitch 1&2</option>
+              </select>
+          </div>
+
+      <div style="display: flex; flex-direction: column;">
+          <label for="glitchIntensity" style="font-weight: bold; font-size: 12px;">Intensitas Glitch:</label>
+          <input type="number" id="glitchIntensity" value="1" min="1" max="10" 
+              style="width: 92px; padding: 5px; border: 1px solid #777; border-radius: 5px; background: #333; color: #fff;">
       </div>
 
-        
-        <label style="font-weight: bold; font-size: 13px; padding-top: 5px; margin-bottom: 15px; ">Hasil Text:</label>
-        <div id="output" style="width: 320px; min-height: 100px; max-height: 200px; padding: 10px; font-size: 16px; 
-            border: 1px solid #777; word-break: break-word; display: flex; align-items: center; border-radius: 10px; 
-            text-align: left; overflow-y: auto;">
+        <div style="display: flex; flex-direction: column;">
+            <label for="duplicateCount" style="font-weight: bold; font-size: 12px;">Jumlah Text</label>
+            <input type="number" id="duplicateCount" value="1" min="1" max="10" 
+                style="width: 92px; padding: 5px; border: 1px solid #777; border-radius: 5px; background: #333; color: #fff;">
+            </div>
+          </div>
+    
+            
+          <label style="font-weight: bold; font-size: 13px; padding-top: 5px; margin-bottom: 15px; ">Hasil Text:</label>
+          <div id="output" style="width: 320px; min-height: 100px; max-height: 200px; padding: 10px; font-size: 16px; 
+              border: 1px solid #777; word-break: break-word; display: flex; align-items: center; border-radius: 10px; 
+              text-align: left; overflow-y: auto;">
+          </div>
+  
+          <label style="font-weight: bold; font-size: 13px; padding-top: 5px; ">Glitch style 1:</label>
+          <input type="range" id="glitchLevelUp" min="1" max="10" value="5" style="width: 100%; " oninput="generateGlitchText()">
+  
+          <label style="font-weight: bold; font-size: 13px; padding-top: 0px; margin-bottom: 0px;">Glitch style 2: ➟ pastikan atur ke style 2 untuk fungsi </label>
+          <input type="range" id="glitchLevelDown" min="1" max="10" value="5" style="width: 100%;" oninput="generateGlitchText()">
+  
+          <div style="display: flex; justify-content: flex-end; width: 100%; margin-top: 5px;">
+              
+              <button onclick="generateGlitchText()" style="padding: 8px 9px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #d1d0d0; color: black; border-radius: 5px; margin-left: 0px;">Buat Glitch</button>
+              
+              <button id="duplicateButton" onclick="duplicateText()" style="padding: 8px 10px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #d1d0d0; color: black; border-radius: 5px; margin-left: 5px;">Gandakan Teks</button>
+              
+              <button onclick="copyText()" style="padding: 8px 10px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #d1d0d0; color: black; border-radius: 5px; margin-left: 5px;">Copy Teks</button>
+  
+              <button onclick="clearText()" style="padding: 8px 10px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #ff4d4d; color: white; border-radius: 5px; margin-left: 5px;">Clear</button>
+              </div>
+                  <label style="font-weight: bold; font-size: 13px; padding-top: 5px; margin-bottom: 10px;">Petunjuk: Ubah bagian (Pilih Jenis Glitch) di atas. <br> Untuk dua fungsi Gabungkan glitcht 1&2 <br> Isi pengaturan jumlah di (Intensitas Glitch
+            & Jumlah Text)</a></label>
+            <b style="color: #989999; font-size: 12px;">Tommy Website V0.1.0</b>
         </div>
 
-        <label style="font-weight: bold; font-size: 13px; padding-top: 5px; ">Glitch style 1:</label>
-        <input type="range" id="glitchLevelUp" min="1" max="10" value="5" style="width: 100%; " oninput="generateGlitchText()">
-
-        <label style="font-weight: bold; font-size: 13px; padding-top: 0px; margin-bottom: 0px;">Glitch style 2: ➟ pastikan atur ke style 2 untuk fungsi </label>
-        <input type="range" id="glitchLevelDown" min="1" max="10" value="5" style="width: 100%;" oninput="generateGlitchText()">
-
-        <div style="display: flex; justify-content: flex-end; width: 100%; margin-top: 5px;">
-            
-            <button onclick="generateGlitchText()" style="padding: 8px 9px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #d1d0d0; color: black; border-radius: 5px; margin-left: 0px;">Buat Glitch</button>
-            
-            <button id="duplicateButton" onclick="duplicateText()" style="padding: 8px 10px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #d1d0d0; color: black; border-radius: 5px; margin-left: 5px;">Gandakan Teks</button>
-            
-            <button onclick="copyText()" style="padding: 8px 10px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #d1d0d0; color: black; border-radius: 5px; margin-left: 5px;">Copy Teks</button>
-
-            <button onclick="clearText()" style="padding: 8px 10px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #ff4d4d; color: white; border-radius: 5px; margin-left: 5px;">Clear</button>
-            </div>
-                <label style="font-weight: bold; font-size: 13px; padding-top: 5px; margin-bottom: 10px;">Petunjuk: Ubah bagian (Pilih Jenis Glitch) di atas. <br> Untuk dua fungsi Gabungkan glitcht 1&2 <br> Isi pengaturan jumlah di (Intensitas Glitch
-          & Jumlah Text)</a></label>
-          <b style="color: #989999; font-size: 12px;">Tommy Website V0.1.0</b>
-    </div>
-
-<script>
-function generateGlitchText() {
-    let text = document.getElementById("inputText").value.trim();
-    let levelUp = parseInt(document.getElementById("glitchLevelUp").value) || 1;
-    let levelDown = parseInt(document.getElementById("glitchLevelDown").value) || 1;
-    let intensity = parseInt(document.getElementById("glitchIntensity").value) || 1;
-    let glitchStyle = document.getElementById("glitchStyle").value;
-
-    if (!text) {
-        alert("Masukkan teks terlebih dahulu!");
-        return;
-    }
-
-    let glitchUp = glitchStyle === "style1" || glitchStyle === "style3" ? "̳̿".repeat(levelUp * intensity) : "";
-    let glitchDown = glitchStyle === "style2" || glitchStyle === "style3" ? "͇͓͙͌̀́".repeat(levelDown * intensity) : "";
-    let glitchMid = glitchStyle === "style3" ? "".repeat(intensity) + "".repeat(intensity) : "";
-
-    let result = "";
-    for (let char of text) {
-        result += glitchMid + char + glitchUp + glitchDown;
-    }
-
-    document.getElementById("output").innerText = result;
-}
-
-
-function duplicateText() {
-    let outputDiv = document.getElementById("output");
-    let text = outputDiv.innerText.trim() || document.getElementById("inputText").value.trim();
-    let duplicateCount = parseInt(document.getElementById("duplicateCount").value) || 1;
-    let button = document.getElementById("duplicateButton");
-
-    if (!text) {
-        alert("Masukkan teks terlebih dahulu!");
-        return;
-    }
-
-    let finalResult = (text + " ").repeat(duplicateCount).trim();
-    outputDiv.innerText = finalResult;
-
-    // Ubah teks tombol
-    button.innerText = "Ganda Ulang↺";
-
-// Efek background merah tua 3x
-let blinkCount = 0;
-let interval = setInterval(() => {
-    if (blinkCount % 2 === 0) {
-        button.style.backgroundColor = "#8B0000"; // Merah tua
-        button.style.color = "white"; // Teks putih
-    } else {
-        button.style.backgroundColor = "#d1d0d0"; // Warna default
-        button.style.color = "black"; // Teks default
-    }
-    blinkCount++;
-
-    if (blinkCount === 9) { // 3x merah tua, 3x normal
-        clearInterval(interval);
-    }
-}, 600);
-
-}
-
-
-function copyText() {
-    let outputDiv = document.getElementById("output");
-    let textToCopy = outputDiv.innerText || outputDiv.textContent;
-
-    if (textToCopy) {
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            alert("Teks berhasil disalin!");
-        }).catch(err => {
-            console.error("Gagal menyalin teks: ", err);
-        });
-    } else {
-        alert("Tidak ada teks untuk disalin!");
-    }
-}
-
-function clearText() {
-    document.getElementById("inputText").value = "";
-    document.getElementById("output").innerText = "";
-}
-
-</script>
-
-
-</body>
-</html>
+      <script>
+      function generateGlitchText() {
+          let text = document.getElementById("inputText").value.trim();
+          let levelUp = parseInt(document.getElementById("glitchLevelUp").value) || 1;
+          let levelDown = parseInt(document.getElementById("glitchLevelDown").value) || 1;
+          let intensity = parseInt(document.getElementById("glitchIntensity").value) || 1;
+          let glitchStyle = document.getElementById("glitchStyle").value;
+      
+          if (!text) {
+              alert("Masukkan teks terlebih dahulu!");
+              return;
+          }
+      
+          let glitchUp = glitchStyle === "style1" || glitchStyle === "style3" ? "̳̿".repeat(levelUp * intensity) : "";
+          let glitchDown = glitchStyle === "style2" || glitchStyle === "style3" ? "͇͓͙͌̀́".repeat(levelDown * intensity) : "";
+          let glitchMid = glitchStyle === "style3" ? "".repeat(intensity) + "".repeat(intensity) : "";
+      
+          let result = "";
+          for (let char of text) {
+              result += glitchMid + char + glitchUp + glitchDown;
+          }
+      
+          document.getElementById("output").innerText = result;
+      }
+      
+      
+      function duplicateText() {
+          let outputDiv = document.getElementById("output");
+          let text = outputDiv.innerText.trim() || document.getElementById("inputText").value.trim();
+          let duplicateCount = parseInt(document.getElementById("duplicateCount").value) || 1;
+          let button = document.getElementById("duplicateButton");
+      
+          if (!text) {
+              alert("Masukkan teks terlebih dahulu!");
+              return;
+          }
+      
+          let finalResult = (text + " ").repeat(duplicateCount).trim();
+          outputDiv.innerText = finalResult;
+      
+          // Ubah teks tombol
+          button.innerText = "Ganda Ulang↺";
+      
+      // Efek background merah tua 3x
+      let blinkCount = 0;
+      let interval = setInterval(() => {
+          if (blinkCount % 2 === 0) {
+              button.style.backgroundColor = "#8B0000"; // Merah tua
+              button.style.color = "white"; // Teks putih
+          } else {
+              button.style.backgroundColor = "#d1d0d0"; // Warna default
+              button.style.color = "black"; // Teks default
+          }
+          blinkCount++;
+      
+          if (blinkCount === 9) { // 3x merah tua, 3x normal
+              clearInterval(interval);
+          }
+      }, 600);
+      
+      }
+      
+      
+      function copyText() {
+          let outputDiv = document.getElementById("output");
+          let textToCopy = outputDiv.innerText || outputDiv.textContent;
+      
+          if (textToCopy) {
+              navigator.clipboard.writeText(textToCopy).then(() => {
+                  alert("Teks berhasil disalin!");
+              }).catch(err => {
+                  console.error("Gagal menyalin teks: ", err);
+              });
+          } else {
+              alert("Tidak ada teks untuk disalin!");
+          }
+      }
+      
+      function clearText() {
+          document.getElementById("inputText").value = "";
+          document.getElementById("output").innerText = "";
+      }
+      
+      </script>
+      
+      
+      </body>
+      </html>
