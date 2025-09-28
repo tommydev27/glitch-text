@@ -1,96 +1,167 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tommy Website</title>
-</head>
 <style>
-    body {
-            overflow-x: hidden;
-            height: auto;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #222;
-        }
-        .container {
-            margin: 0 auto;
-            padding: 0px;
-            color: #fff;
-            overflow: hidden;
-            background: #222;
-            border-radius: 10px;
-        }
-        
-        /* Layar loading */
-        #loading-screen {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            margin-top: 150px;
-            background: #222;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            animation: fadeOut 0.95s forwards 0.95s; /* Hilang setelah 0.95 detik */
-        }
-        
-        /* Animasi menghilangkan loading */
-        @keyframes fadeOut {
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-        
-        .loader {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            border: 5px solid rgb(175,220,227);
-            border-top: 5px solid #fff;
-            animation: spin 0.55s linear infinite;
-        }
-        
-        /* Animasi putaran */
-        @keyframes spin {
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-           .fixed {
-            position: fixed;
-            top:0; left:0;
-            width: 100%; 
-            z-index:99; }
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f7f8;
+    margin: 0;
+    padding: 8px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+
+    color: #333;
+    padding: 10px;
+    background: #fff;
+    border: solid 1px #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
             
+  header{padding:5px 0px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center; font-family:Normal; margin-bottom: 10px;}
+  header h1{font-size:16px;margin:0;font-weight:700; color:#333; }
+  header .badge{font-size:11px;color:#02c302; background:#0a0a0a;border:1px solid #123a18;padding:2px 6px;border-radius:999px}
             
-           header{padding:5px 0px;border-bottom:1px solid var(--border);display:flex;gap:10px;align-items:center; font-family:Normal; margin-bottom: 10px;}
-            header h1{font-size:16px;margin:0;font-weight:700; color:#fff; }
-            header .badge{font-size:11px;color:#02c302; background:#0a0a0a;border:1px solid #123a18;padding:2px 6px;border-radius:999px}
+#inputText {
+    width: 100%;
+    max-width: 100%; /* Memastikan tidak melebihi lebar kontainer */
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    border: 1px solid #777;
+    border-radius: 10px;
+    resize: none;
+    background: #fff;
+    color: #333;
+    box-sizing: border-box; /* Penting agar padding tidak menambah lebar */
+}
+
+.output-label {
+    font-weight: bold;
+    font-size: 13px;
+    padding-top: 5px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.output-box {
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #777;
+    word-break: break-word;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    text-align: left;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+      }
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.action-button {
+    padding: 8px 8px;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    background-color: green;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.action-button:hover {
+    background-color: #bfbfbf;
+}
+
+.action-button.danger {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.action-button.danger:hover {
+    background-color: #e04343;
+}
+
+
+.range-label {
+    font-size: 15px;
+    margin: 10px 0 5px;
+    display: block;
+    color: #333;
+}
+
+.range-input {
+    width: 100%;
+    margin-bottom: 15px;
+    appearance: none;
+    height: 6px;
+    border-radius: 5px;
+    background: #ccc;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.range-input:hover {
+    background: #bbb;
+}
+
+.range-input::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.range-input::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
            </style>
-           
-        <body>
+       </head>
+  <body>
 
      <div class="container">
-      <div style="display: flex; flex-direction: column; align-items: flex-start; padding: 10px;">
-        <header>
-      <h1>Glitch Teks</h1>
-      <span class="badge">font • icon • unicode character</span>
-        </header>
-          <textarea id="inputText" placeholder="Tulis..." style="width: 320px; height: 120px; padding: 10px; margin-bottom: 15px; font-size: 13px; border: 1px solid #777; border-radius: 10px; resize: none; background: #222; color: #fff;"></textarea>
 
-      <div style="display: flex; gap: 18.9px; flex-wrap: wrap; align-items: flex-start;">
+     <header>
+      <h1>Glitch Teks</h1>
+      <span class="badge">Glitch font Teks</span>
+        </header>
+      <textarea id="inputText" placeholder="Tulis..."></textarea>
+
+      <div style="width: 100%;  display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-start;">
           <div style="display: flex; flex-direction: column;">
-              <label for="glitchStyle" style="font-size: 12px;"><b>Pilih Jenis Glitch:</b></label>
+              <label for="glitchStyle" style="font-size: 12px;"><p>Pilih Jenis Glitch:</p></label>
               
-              <select id="glitchStyle" style="padding: 3px; border: 1px solid #777; border-radius: 5px; background: #333; color: #fff;">
+              <select id="glitchStyle" style="width: 100%;  padding: 4px; border-radius: 5px; background: green; color: #fff;">
                   <option value="style1">Glitch 1</option>
                   <option value="style2">Glitch 2</option>
                   <option value="style3">Glitch 1&2</option>
@@ -98,44 +169,40 @@
           </div>
 
       <div style="display: flex; flex-direction: column;">
-          <label for="glitchIntensity" style="font-weight: bold; font-size: 12px;">Intensitas Glitch:</label>
+          <label for="glitchIntensity" style=" font-size: 12px;"><p>Intensitas Glitch</p></label>
           <input type="number" id="glitchIntensity" value="1" min="1" max="10" 
-              style="width: 92px; padding: 5px; border: 1px solid #777; border-radius: 5px; background: #333; color: #fff;">
-      </div>
+              style="width: 100%; padding: 5px; border: 1px solid #ccc; border-radius: 5px; background: #fff; color: #333;">
+            </div>
 
         <div style="display: flex; flex-direction: column;">
-            <label for="duplicateCount" style="font-weight: bold; font-size: 12px;">Jumlah Text</label>
+            <label for="duplicateCount" style=" font-size: 12px;"><p>Jumlah Text</p></label>
             <input type="number" id="duplicateCount" value="1" min="1" max="10" 
-                style="width: 92px; padding: 5px; border: 1px solid #777; border-radius: 5px; background: #333; color: #fff;">
+                style="width: 100%;  padding: 5px; border: 1px solid #ccc; border-radius: 5px;  color: #333;">
             </div>
           </div>
-    
             
-          <label style="font-weight: bold; font-size: 13px; padding-top: 5px; margin-bottom: 15px; ">Hasil Text:</label>
-          <div id="output" style="width: 320px; min-height: 100px; max-height: 200px; padding: 10px; font-size: 16px; 
-              border: 1px solid #777; word-break: break-word; display: flex; align-items: center; border-radius: 10px; 
-              text-align: left; overflow-y: auto;">
-          </div>
-  
-          <label style="font-weight: bold; font-size: 13px; padding-top: 5px; ">Glitch style 1:</label>
-          <input type="range" id="glitchLevelUp" min="1" max="10" value="5" style="width: 100%; " oninput="generateGlitchText()">
-  
-          <label style="font-weight: bold; font-size: 13px; padding-top: 0px; margin-bottom: 0px;">Glitch style 2: ➟ pastikan atur ke style 2 untuk fungsi </label>
-          <input type="range" id="glitchLevelDown" min="1" max="10" value="5" style="width: 100%;" oninput="generateGlitchText()">
-  
-          <div style="display: flex; justify-content: flex-end; width: 100%; margin-top: 5px;">
+      <label for="output" class="output-label"><p>Hasil Text:</p></label>
+<div id="output" class="output-box"></div>
+
+<label for="glitchLevelUp" class="range-label">Glitch style 1:</label>
+<input type="range" id="glitchLevelUp" min="1" max="10" value="5" class="range-input" oninput="generateGlitchText()">
+
+<label for="glitchLevelDown" class="range-label">
+  Glitch style 2: ➟ pastikan atur ke style 2 untuk fungsi
+</label>
+<input type="range" id="glitchLevelDown" min="1" max="10" value="5" class="range-input" oninput="generateGlitchText()">
+
               
-              <button onclick="generateGlitchText()" style="padding: 8px 9px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #d1d0d0; color: black; border-radius: 5px; margin-left: 0px;">Buat Glitch</button>
-              
-              <button id="duplicateButton" onclick="duplicateText()" style="padding: 8px 10px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #d1d0d0; color: black; border-radius: 5px; margin-left: 5px;">Gandakan Teks</button>
-              
-              <button onclick="copyText()" style="padding: 8px 10px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #d1d0d0; color: black; border-radius: 5px; margin-left: 5px;">Copy Teks</button>
-  
-              <button onclick="clearText()" style="padding: 8px 10px; font-size: 13px; font-weight: bold; cursor: pointer; border: none; background-color: #ff4d4d; color: white; border-radius: 5px; margin-left: 5px;">Clear</button>
-              </div>
-                  <label style="font-weight: bold; font-size: 13px; padding-top: 5px; margin-bottom: 10px;">Petunjuk: Ubah bagian (Pilih Jenis Glitch) di atas. <br> Untuk dua fungsi Gabungkan glitcht 1&2 <br> Isi pengaturan jumlah di (Intensitas Glitch
-            & Jumlah Text)</a></label>
-            <b style="color: #989999; font-size: 12px;">Tommy Website V0.1.0</b>
+            <div class="button-group">
+              <button onclick="generateGlitchText()" class="action-button">Buat Glitch</button>
+              <button id="duplicateButton" onclick="duplicateText()" class="action-button">Gandakan Teks</button>
+              <button onclick="copyText()" class="action-button">Copy Teks</button>
+              <button onclick="clearText()" class="action-button danger">Clear</button>
+            </div>
+
+                  <label style=" font-size: 15px; padding-top: 5px; margin-bottom: 10px;"><p>Petunjuk: Ubah bagian (Pilih Jenis Glitch) di atas. <br> Untuk dua fungsi Gabungkan glitcht 1&2 <br> Isi pengaturan jumlah di (Intensitas Glitch
+            & Jumlah Text)</p></label>
+            <b style="color: #ccc; font-size: 12px;">Tommy Website V0.1.0</b>
         </div>
 
       <script>
